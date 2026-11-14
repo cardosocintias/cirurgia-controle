@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "tests": 69,
+  "regression_tests": 32,
+  "acceptance_tests": 37,
+  "test_failures": 0,
+  "test_errors": 0,
+  "dictionary_columns_match": true,
+  "integrity": "ok",
+  "foreign_key_errors": 0,
+  "zip_entries": 80,
+  "manifest_verified": true,
+  "clean_install_tests_passed": true,
+  "database_matches_sql_rebuild": true,
+  "report_pages": 36,
+  "slides": 12,
+  "visual_review": "Todas as páginas do relatório e slides revistos em PNG; capturas reais e diagramas legíveis.",
+  "identification_provided": true,
+  "human_review": "Identificação fornecida pelo aluno e incluída nos documentos. A revisão e defesa desta versão pelo grupo não são inferidas."
+}

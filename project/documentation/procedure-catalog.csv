@@ -1,0 +1,57 @@
+﻿specialty,procedure_id,procedure,pricing_model,reference_price_eur,price_origin,country,currency,notes
+Cirurgia geral,150,Apendicectomia,estimado,4500.0,simulado,PT,EUR,Via e contexto do episódio por definir.
+Cirurgia geral,151,Colecistectomia,fechado,4500.0,simulado,PT,EUR,Via e colangiografia por definir.
+Cirurgia geral,155,Fistulectomia anal,estimado,3000.0,simulado,PT,EUR,Complexidade e técnica por definir.
+Cirurgia geral,152,Gastrectomia,estimado,14000.0,simulado,PT,EUR,Extensão e via por definir; não assumir cirurgia bariátrica.
+Cirurgia geral,153,Hemorroidectomia,fechado,2500.0,simulado,PT,EUR,Técnica e inclusões por definir.
+Cirurgia geral,154,Reparação de hérnia incisional,estimado,6000.0,simulado,PT,EUR,Extensão e inclusão de rede por definir.
+Cirurgia plástica,137,Abdominoplastia,fechado,5500.0,simulado,PT,EUR,"Extensão, internamento e inclusões por definir."
+Cirurgia plástica,139,Enxerto de pele,estimado,3500.0,simulado,PT,EUR,Área e local por definir.
+Cirurgia plástica,141,Lifting facial,estimado,6500.0,simulado,PT,EUR,Extensão por definir.
+Cirurgia plástica,138,Lipoaspiração,fechado,4000.0,simulado,PT,EUR,Número de zonas e internamento por definir.
+Cirurgia plástica,140,Lipoenxertia,estimado,3500.0,simulado,PT,EUR,Área e volume por definir.
+Cirurgia plástica,135,Mamoplastia de aumento,estimado,5000.0,simulado,PT,EUR,Bilateral; simulação incluindo próteses genéricas.
+Cirurgia plástica,136,Mamoplastia redutora,estimado,5500.0,simulado,PT,EUR,Bilateral na simulação.
+Cirurgia plástica,134,Otoplastia,estimado,2500.0,simulado,PT,EUR,Bilateral na simulação.
+Ginecologia,126,Colporrafia,estimado,3500.0,simulado,PT,EUR,Anterior/posterior e atos associados por definir.
+Ginecologia,123,Histerectomia,fechado,7000.0,simulado,PT,EUR,Via e eventual anexectomia por definir.
+Ginecologia,124,Histerosplastia — designação por confirmar,estimado,3500.0,simulado,PT,EUR,Descrição original preservada; confirmar se pretendia histeroplastia ou outro ato.
+Ginecologia,125,Salpingectomia,estimado,4000.0,simulado,PT,EUR,Lateralidade e via por definir.
+Neurocirurgia,130,Cirurgia de hérnia discal cervical,estimado,10000.0,simulado,PT,EUR,Número de níveis e eventual implante por definir.
+Neurocirurgia,131,Cirurgia de hérnia discal lombar,estimado,8000.0,simulado,PT,EUR,Número de níveis e técnica por definir.
+Neurocirurgia,127,Craniotomia,estimado,18000.0,simulado,PT,EUR,Acesso cirúrgico genérico; indicação e ato principal por definir.
+Neurocirurgia,132,Extirpação de hérnia — designação por confirmar,estimado,8000.0,simulado,PT,EUR,Pode sobrepor-se às cirurgias discais; não eliminar nem fundir sem confirmação.
+Neurocirurgia,133,Foraminectomia,estimado,8500.0,simulado,PT,EUR,"Designação fornecida pelo aluno; confirmar ato, região e eventual foraminotomia."
+Neurocirurgia,128,Laminectomia,estimado,9000.0,simulado,PT,EUR,Região e número de níveis por definir.
+Neurocirurgia,129,Tratamento cirúrgico de aneurisma cerebral,estimado,25000.0,simulado,PT,EUR,Técnica e dispositivos por definir.
+Oftalmologia,104,Blefaroplastia,estimado,2500.0,simulado,PT,EUR,Proposta de simulação bilateral; confirmar pálpebras abrangidas.
+Oftalmologia,100,Cirurgia de catarata,fechado,2000.0,simulado,PT,EUR,Por olho; tipo de lente e inclusões a definir.
+Oftalmologia,108,Cirurgia de descolamento de retina,estimado,5500.0,simulado,PT,EUR,Por olho; distinguir do episódio de vitrectomia para não duplicar faturação.
+Oftalmologia,107,Dacriocistorrinostomia,estimado,3000.0,simulado,PT,EUR,Unilateral; técnica por definir.
+Oftalmologia,103,Implante de lente intraocular para miopia,estimado,3000.0,simulado,PT,EUR,Por olho; modelo de lente por definir.
+Oftalmologia,102,Injeção de substituto vítreo / pneumopexia — por confirmar,estimado,1800.0,simulado,PT,EUR,Manter descrição original até confirmar ato e técnica; não equiparar automaticamente a injeção de medicamento.
+Oftalmologia,105,LASIK,estimado,1500.0,simulado,PT,EUR,Por olho; não confundir com preço bilateral.
+Oftalmologia,106,Transplante de córnea,estimado,6500.0,simulado,PT,EUR,Por olho; técnica e tecido por definir.
+Oftalmologia,101,Vitrectomia,estimado,4500.0,simulado,PT,EUR,Por olho; técnica e inclusões por definir.
+Ortopedia,116,Artroplastia total da anca,estimado,10000.0,simulado,PT,EUR,Unilateral; simulação incluindo prótese genérica.
+Ortopedia,1,Artroplastia total do joelho,estimado,10000.0,simulado,PT,EUR,Unilateral; simulação incluindo prótese genérica. Casos antigos mantêm preços históricos.
+Ortopedia,118,Artroplastia total do ombro,estimado,11000.0,simulado,PT,EUR,Unilateral; simulação incluindo prótese genérica.
+Ortopedia,121,Correção de hallux valgus,estimado,3000.0,simulado,PT,EUR,Unilateral; normalização do termo hallux vago.
+Ortopedia,122,Libertação do túnel cárpico,estimado,1500.0,simulado,PT,EUR,Unilateral; procedimento associado à síndrome indicada.
+Ortopedia,120,Meniscectomia,estimado,3000.0,simulado,PT,EUR,Unilateral; técnica por definir.
+Ortopedia,119,Reconstrução do ligamento cruzado,fechado,6500.0,simulado,PT,EUR,Tipo de ligamento e enxerto a confirmar.
+Otorrinolaringologia,112,Amigdalectomia,estimado,2500.0,simulado,PT,EUR,Não inclui automaticamente adenoidectomia.
+Otorrinolaringologia,115,Implante coclear,estimado,25000.0,simulado,PT,EUR,Simulação unilateral incluindo dispositivo genérico; composição por validar.
+Otorrinolaringologia,114,Mastoidectomia,estimado,5500.0,simulado,PT,EUR,Unilateral; extensão por definir.
+Otorrinolaringologia,110,Microcirurgia endonasal,fechado,3500.0,simulado,PT,EUR,Interpretação de microcirurgia indicada pelo aluno; extensão por definir.
+Otorrinolaringologia,111,Rinoplastia,estimado,4500.0,simulado,PT,EUR,Não inclui automaticamente septoplastia.
+Otorrinolaringologia,109,Septoplastia,fechado,3000.0,simulado,PT,EUR,Confirmar se inclui cirurgia dos cornetos.
+Otorrinolaringologia,113,Timpanoplastia,estimado,4000.0,simulado,PT,EUR,Unilateral; técnica por definir.
+Urologia,144,Circuncisão,fechado,1000.0,simulado,PT,EUR,Modalidade anestésica e inclusões por definir.
+Urologia,148,Cirurgia de hidrocele,fechado,1800.0,simulado,PT,EUR,Lateralidade e inclusões por definir.
+Urologia,147,Cistoscopia,estimado,700.0,simulado,PT,EUR,Diagnóstica na simulação; anestesia por definir.
+Urologia,146,Litotrícia,estimado,2500.0,simulado,PT,EUR,Modalidade e número de sessões por definir.
+Urologia,142,Prostatectomia,estimado,11000.0,simulado,PT,EUR,Distinguir radical de cirurgia por doença benigna; técnica por definir.
+Urologia,149,Resseção transuretral da próstata,estimado,5000.0,simulado,PT,EUR,Técnica e internamento por definir.
+Urologia,145,Ureteroscopia,estimado,4000.0,simulado,PT,EUR,Unilateral; não confundir com uretroscopia.
+Urologia,143,Vasectomia,fechado,900.0,simulado,PT,EUR,Duplicação na lista original removida.

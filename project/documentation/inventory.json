@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "counts": {
+    "unit": 3,
+    "specialty": 8,
+    "doctor": 27,
+    "doctor_specialty": 27,
+    "patient": 123,
+    "surgical_procedure": 57,
+    "item": 11,
+    "package": 9,
+    "package_item": 33,
+    "surgery": 243,
+    "surgery_doctor": 244,
+    "budget": 243,
+    "budget_line": 931,
+    "consumption": 412,
+    "procedure_pricing": 56,
+    "doctor_unit": 75,
+    "unit_procedure_price": 171
+  },
+  "views": 2,
+  "triggers": 30,
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "integrity": "ok",
+  "foreign_key_errors": []
+}

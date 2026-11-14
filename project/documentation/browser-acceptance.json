@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-19",
+  "database": "Cópia independente accept-browser-v11.db",
+  "patient_create_search": true,
+  "doctor_create": true,
+  "doctor_unit_link": true,
+  "price_update_unit3": 777777,
+  "avulso": {
+    "episode": 244,
+    "planned_cents": 400000,
+    "actual_cents": 420000,
+    "variance_cents": 20000,
+    "margin_cents": 357777,
+    "state": "concluida"
+  },
+  "package_cancel": {
+    "episode": 245,
+    "state": "cancelada"
+  },
+  "package_complete": {
+    "episode": 246,
+    "unit": 2,
+    "planned_cents": 400000,
+    "actual_cents": 400000,
+    "variance_cents": 0,
+    "margin_cents": 125000
+  },
+  "terminal_buttons_hidden": true,
+  "required_fields_blocked": true,
+  "duplicate_patient_rejected": true,
+  "mobile_pages": [
+    {
+      "page": "Orçamentos e episódios",
+      "scroll": 375,
+      "width": 375
+    },
+    {
+      "page": "Procedimentos avulsos",
+      "scroll": 375,
+      "width": 375
+    },
+    {
+      "page": "Pacotes cirúrgicos",
+      "scroll": 375,
+      "width": 375
+    },
+    {
+      "page": "Equipa médica",
+      "scroll": 375,
+      "width": 375
+    },
+    {
+      "page": "Pacientes",
+      "scroll": 375,
+      "width": 375
+    }
+  ],
+  "physical_print_tested": false
+}

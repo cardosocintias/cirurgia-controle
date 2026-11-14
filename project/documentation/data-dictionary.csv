@@ -1,0 +1,70 @@
+﻿Table,Attribute,Data Type,PK,FK,Nullable,Unique,Allowed Values / Domain,Description,Example
+unit,unit_id,INTEGER,Y,,N,,,"Unidade operacional fictícia, com código, nome e cidade. Unidade operacional",1
+unit,code,TEXT,,,N,code,,"Unidade operacional fictícia, com código, nome e cidade. Código único da unidade",COI
+unit,name,TEXT,,,N,name,,"Unidade operacional fictícia, com código, nome e cidade. Nome ou designação",Unidade Coimbra
+unit,city,TEXT,,,N,,,"Unidade operacional fictícia, com código, nome e cidade. Cidade da unidade",Coimbra
+specialty,specialty_id,INTEGER,Y,,N,,,Especialidade do procedimento e habilitação declarada do médico. Especialidade,1
+specialty,name,TEXT,,,N,name,,Especialidade do procedimento e habilitação declarada do médico. Nome ou designação,Ortopedia
+doctor,doctor_id,INTEGER,Y,,N,,,Profissional com registo fictício único. Profissional,1
+doctor,name,TEXT,,,N,,,Profissional com registo fictício único. Nome ou designação,Ana Martins
+doctor,registration,TEXT,,,N,registration,,Profissional com registo fictício único. Código profissional fictício único,DEMO-001
+doctor_specialty,doctor_id,INTEGER,Y,doctor.doctor_id,N,"doctor_id,specialty_id",,Habilitações de cada médico; associação N:M. Profissional,1
+doctor_specialty,specialty_id,INTEGER,Y,specialty.specialty_id,N,"doctor_id,specialty_id",,Habilitações de cada médico; associação N:M. Especialidade,1
+patient,patient_id,INTEGER,Y,,N,,,Paciente/cliente fictício comum às unidades; não representa entidade pagadora distinta. Paciente,1
+patient,name,TEXT,,,N,,,Paciente/cliente fictício comum às unidades; não representa entidade pagadora distinta. Nome ou designação,Maria Silva
+patient,fictional_code,TEXT,,,N,fictional_code,,Paciente/cliente fictício comum às unidades; não representa entidade pagadora distinta. Código fictício único do paciente,FIC-001
+surgical_procedure,procedure_id,INTEGER,Y,,N,,,Identidade e especialidade do procedimento. Procedimento,137
+surgical_procedure,specialty_id,INTEGER,,specialty.specialty_id,N,,,Identidade e especialidade do procedimento. Especialidade,1
+surgical_procedure,name,TEXT,,,N,name,,Identidade e especialidade do procedimento. Nome ou designação,Abdominoplastia
+item,item_id,INTEGER,Y,,N,,,Recurso de custo e unidade de medida; não gere stock. Recurso de custo,7
+item,name,TEXT,,,N,name,,Recurso de custo e unidade de medida; não gere stock. Nome ou designação,Conjunto de materiais de cirurgia geral
+item,category,TEXT,,,N,,"equipa,sala,material,medicamento,protese",Recurso de custo e unidade de medida; não gere stock. Categoria do recurso,equipa
+item,unit,TEXT,,,N,,,Recurso de custo e unidade de medida; não gere stock. Unidade de medida da quantidade,equipa
+item,unit_cost_cents,INTEGER,,,N,,">=0, cêntimos EUR; preço avulso >0","Recurso de custo e unidade de medida; não gere stock. Custo unitário histórico ou atual, em cêntimos EUR",120000
+package,unit_id,INTEGER,,unit.unit_id,N,,,Composição comercial identificada por unidade e procedimento. Unidade operacional,1
+package,package_id,INTEGER,Y,,N,,,Composição comercial identificada por unidade e procedimento. Pacote,1
+package,procedure_id,INTEGER,,surgical_procedure.procedure_id,N,,,Composição comercial identificada por unidade e procedimento. Procedimento,1
+package,name,TEXT,,,N,,,Composição comercial identificada por unidade e procedimento. Nome ou designação,Pacote joelho padrão
+package,sale_price_cents,INTEGER,,,N,,">=0, cêntimos EUR; preço avulso >0",Composição comercial identificada por unidade e procedimento. Preço de venda em cêntimos EUR,500000
+package_item,package_id,INTEGER,Y,package.package_id,N,"package_id,item_id",,Quantidade prevista de um recurso no pacote. Pacote,1
+package_item,item_id,INTEGER,Y,item.item_id,N,"package_id,item_id",,Quantidade prevista de um recurso no pacote. Recurso de custo,1
+package_item,quantity,REAL,,,N,,0<q<=1000000; até 3 casas decimais,Quantidade prevista de um recurso no pacote. Quantidade positiva na unidade do recurso,1.0
+surgery,unit_id,INTEGER,,unit.unit_id,N,,,Episódio cirúrgico e respetivo estado. Unidade operacional,1
+surgery,surgery_id,INTEGER,Y,,N,,,Episódio cirúrgico e respetivo estado. Episódio,4
+surgery,patient_id,INTEGER,,patient.patient_id,N,,,Episódio cirúrgico e respetivo estado. Paciente,1
+surgery,procedure_id,INTEGER,,surgical_procedure.procedure_id,N,,,Episódio cirúrgico e respetivo estado. Procedimento,1
+surgery,scheduled_at,TEXT,,,N,,,Episódio cirúrgico e respetivo estado. Data/hora local planeada em ISO 8601,2026-09-01T08:00
+surgery,status,TEXT,,,N,,"agendada,em_curso,concluida,cancelada",Episódio cirúrgico e respetivo estado. Estado do ciclo de vida,concluida
+surgery_doctor,surgery_id,INTEGER,Y,surgery.surgery_id,N,"surgery_id,doctor_id",,Participação do médico e papel no episódio. Episódio,1
+surgery_doctor,doctor_id,INTEGER,Y,doctor.doctor_id,N,"surgery_id,doctor_id",,Participação do médico e papel no episódio. Profissional,1
+surgery_doctor,role,TEXT,,,N,,,Participação do médico e papel no episódio. Papel do profissional no episódio,cirurgiao
+budget,modality,TEXT,,,N,,"avulso,pacote",Orçamento e preço de venda histórico do episódio. Origem da composição: pacote ou avulso,pacote
+budget,package_id,INTEGER,,package.package_id,Y,,,Orçamento e preço de venda histórico do episódio. Pacote,1
+budget,budget_id,INTEGER,Y,,N,,,Orçamento e preço de venda histórico do episódio. Orçamento,1
+budget,surgery_id,INTEGER,,surgery.surgery_id,N,"partial: surgery_id; surgery_id,version",,Orçamento e preço de venda histórico do episódio. Episódio,1
+budget,version,INTEGER,,,N,"surgery_id,version",,Orçamento e preço de venda histórico do episódio. Número da versão; revisões aprovadas fora do âmbito,1
+budget,status,TEXT,,,N,,"rascunho,aprovado,substituido (reservado)",Orçamento e preço de venda histórico do episódio. Estado do ciclo de vida,aprovado
+budget,sale_price_cents,INTEGER,,,N,,">=0, cêntimos EUR; preço avulso >0",Orçamento e preço de venda histórico do episódio. Preço de venda em cêntimos EUR,500000
+budget_line,budget_id,INTEGER,Y,budget.budget_id,N,"budget_id,item_id",,"Quantidade e custo unitário previstos, copiados no momento do orçamento. Orçamento",1
+budget_line,item_id,INTEGER,Y,item.item_id,N,"budget_id,item_id",,"Quantidade e custo unitário previstos, copiados no momento do orçamento. Recurso de custo",1
+budget_line,quantity,REAL,,,N,,0<q<=1000000; até 3 casas decimais,"Quantidade e custo unitário previstos, copiados no momento do orçamento. Quantidade positiva na unidade do recurso",1.0
+budget_line,unit_cost_cents,INTEGER,,,N,,">=0, cêntimos EUR; preço avulso >0","Quantidade e custo unitário previstos, copiados no momento do orçamento. Custo unitário histórico ou atual, em cêntimos EUR",120000
+consumption,consumption_id,INTEGER,Y,,N,,,"Recurso efetivamente registado, com quantidade e custo histórico. Registo de consumo",1
+consumption,surgery_id,INTEGER,,surgery.surgery_id,N,,,"Recurso efetivamente registado, com quantidade e custo histórico. Episódio",1
+consumption,item_id,INTEGER,,item.item_id,N,,,"Recurso efetivamente registado, com quantidade e custo histórico. Recurso de custo",1
+consumption,quantity,REAL,,,N,,0<q<=1000000; até 3 casas decimais,"Recurso efetivamente registado, com quantidade e custo histórico. Quantidade positiva na unidade do recurso",1.0
+consumption,unit_cost_cents,INTEGER,,,N,,">=0, cêntimos EUR; preço avulso >0","Recurso efetivamente registado, com quantidade e custo histórico. Custo unitário histórico ou atual, em cêntimos EUR",120000
+consumption,reason,TEXT,,,Y,,,"Recurso efetivamente registado, com quantidade e custo histórico. Motivo opcional do consumo ou desvio",Mais meia hora de sala
+consumption,recorded_at,TEXT,,,N,,,"Recurso efetivamente registado, com quantidade e custo histórico. Instante UTC de registo",2026-10-19 12:00:00
+procedure_pricing,procedure_id,INTEGER,Y,surgical_procedure.procedure_id,N,,,"Referência académica original de modalidade, origem e âmbito do preço; não é o preço efetivo da unidade. Procedimento",1
+procedure_pricing,pricing_model,TEXT,,,N,,,"Referência académica original de modalidade, origem e âmbito do preço; não é o preço efetivo da unidade. Modalidade da referência original: fechado ou estimado",estimado
+procedure_pricing,reference_price_cents,INTEGER,,,Y,,">=0, cêntimos EUR; preço avulso >0","Referência académica original de modalidade, origem e âmbito do preço; não é o preço efetivo da unidade. Preço original simulado em cêntimos EUR",1000000
+procedure_pricing,price_origin,TEXT,,,N,,,"Referência académica original de modalidade, origem e âmbito do preço; não é o preço efetivo da unidade. Origem do valor de referência",simulado
+procedure_pricing,country,TEXT,,,N,,,"Referência académica original de modalidade, origem e âmbito do preço; não é o preço efetivo da unidade. País PT",PT
+procedure_pricing,currency,TEXT,,,N,,,"Referência académica original de modalidade, origem e âmbito do preço; não é o preço efetivo da unidade. Moeda EUR",EUR
+procedure_pricing,notes,TEXT,,,N,,,"Referência académica original de modalidade, origem e âmbito do preço; não é o preço efetivo da unidade. Âmbito e notas de nomenclatura/inclusões por confirmar",Unilateral; simulação incluindo prótese genérica. Casos antigos mantêm preços históricos.
+doctor_unit,doctor_id,INTEGER,Y,doctor.doctor_id,N,"doctor_id,unit_id",,Vínculo N:M entre médico e unidade. Profissional,1
+doctor_unit,unit_id,INTEGER,Y,unit.unit_id,N,"doctor_id,unit_id",,Vínculo N:M entre médico e unidade. Unidade operacional,1
+unit_procedure_price,unit_id,INTEGER,Y,unit.unit_id,N,"unit_id,procedure_id",,Preço de venda avulso atual por unidade e procedimento. Unidade operacional,1
+unit_procedure_price,procedure_id,INTEGER,Y,surgical_procedure.procedure_id,N,"unit_id,procedure_id",,Preço de venda avulso atual por unidade e procedimento. Procedimento,1
+unit_procedure_price,sale_price_cents,INTEGER,,,N,,">=0, cêntimos EUR; preço avulso >0",Preço de venda avulso atual por unidade e procedimento. Preço de venda em cêntimos EUR,1000000
